@@ -1,0 +1,6 @@
+framework module MMBeautyKit {
+  umbrella header "MMBeautyKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
