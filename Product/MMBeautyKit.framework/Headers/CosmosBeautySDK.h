@@ -44,6 +44,11 @@ typedef NS_OPTIONS(NSUInteger, MMBeautyKitAuthrizationStatus) {
 /// @param appId 接入方申请的appId, 用于鉴权以及拉取配置信息
 + (void)initSDKWithAppId:(NSString *)appId;
 
+/// 初始化BeautyKit环境
+/// @param appId 接入方申请的appId, 用于鉴权以及拉取配置信息
+/// @param delegate 设置代理
++ (void)initSDKWithAppId:(NSString *)appId delegate:(id<CosmosBeautySDKDelegate> _Nullable)delegate;
+
 /// 返回接入方设置的appId
 + (NSString * _Nullable)appId;
 
@@ -74,10 +79,6 @@ typedef NS_OPTIONS(NSUInteger, MMBeautyKitAuthrizationStatus) {
 
 /// 当人脸模型拉取失败后接入方可以通过该方法重新发起请求
 + (void)prepareBeautyResource;
-
-/// 设置代理，接入方可通过代理函数得到错误信息
-/// @param delgate 代理
-+ (void)setDelegate:(id<CosmosBeautySDKDelegate>)delgate;
 
 @end
 
